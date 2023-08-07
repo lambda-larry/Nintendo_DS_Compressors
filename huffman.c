@@ -21,6 +21,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "platform.h"
+
 /*----------------------------------------------------------------------------*/
 //#define _CUE_LOG_                // enable log mode (for test purposes)
 //#define _CUE_MODES_21_22_        // enable modes 0x21-0x22 (for test purposes)
@@ -78,9 +80,10 @@ unsigned int    num_bits, max_symbols, num_leafs, num_nodes;
 
 /*----------------------------------------------------------------------------*/
 #define BREAK(text) { printf(text); return; }
-#define EXIT(text)  { printf(text); exit(-1); }
+#define EXIT(text)  Exit(text)
 
 /*----------------------------------------------------------------------------*/
+void  Exit(const char *text);
 void  Title(void);
 void  Usage(void);
 char *Load(char *filename, int *length, int min, int max);
@@ -148,6 +151,12 @@ int main(int argc, char **argv) {
 }
 
 /*----------------------------------------------------------------------------*/
+void Exit(const char *text) {
+  printf("%s", text);
+  exit(EXIT_FAILURE);
+}
+
+/*----------------------------------------------------------------------------*/
 void Title(void) {
   printf(
     "\n"
@@ -159,7 +168,7 @@ void Title(void) {
 
 /*----------------------------------------------------------------------------*/
 void Usage(void) {
-  EXIT(
+  Exit(
     "Usage: HUFFMAN command filename [filename [...]]\n"
     "\n"
     "command:\n"
@@ -276,12 +285,12 @@ void HUF_Decode(char *filename) {
 
     if (ch) {
       *raw |= pos << nbits;
-////  *raw = (*raw << num_bits) | pos; 
+////  *raw = (*raw << num_bits) | pos;
       if (!(nbits = (nbits + num_bits) & 7)) raw++;
 
       pos = *(tree + 1);
       next = 0;
-    }    
+    }
   }
 
   raw_len = raw - raw_buffer;

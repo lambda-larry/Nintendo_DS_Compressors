@@ -21,6 +21,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "platform.h"
+
 /*----------------------------------------------------------------------------*/
 #define CMD_DECODE    0x00       // decode
 #define CMD_CODE_30   0x30       // RLE magic number
@@ -96,7 +98,7 @@ void Title(void) {
     "RLE - (c) CUE 2011\n"
     "RLE coding for Nintendo GBA/DS\n"
     "\n"
-  ); 
+  );
 }
 
 /*----------------------------------------------------------------------------*/

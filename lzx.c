@@ -21,6 +21,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "platform.h"
+
 /*----------------------------------------------------------------------------*/
 #define CMD_DECODE    0x00       // decode
 #define CMD_CODE_11   0x11       // LZX big endian magic number
@@ -109,7 +111,7 @@ void Title(void) {
     "LZX - (c) CUE 2011\n"
     "LZ eXtended coding for Nintendo GBA/DS\n"
     "\n"
-  ); 
+  );
 }
 
 /*----------------------------------------------------------------------------*/

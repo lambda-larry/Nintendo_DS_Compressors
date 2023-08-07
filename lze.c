@@ -21,6 +21,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "platform.h"
+
 /*----------------------------------------------------------------------------*/
 #define CMD_DECODE    0x00       // decode
 #define CMD_CODE_LE   0x654C     // LZE magic number
@@ -100,7 +102,7 @@ void Title(void) {
     "LZE - (c) CUE 2011\n"
     "LZ Enhanced coding for Nintendo GBA/DS\n"
     "\n"
-  ); 
+  );
 }
 
 /*----------------------------------------------------------------------------*/

@@ -21,6 +21,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "platform.h"
+
 /*----------------------------------------------------------------------------*/
 #define CMD_DECODE    0x00       // decode
 #define CMD_ENCODE    0x01       // encode
@@ -107,7 +109,7 @@ void Title(void) {
     "BLZ - (c) CUE 2011\n"
     "Bottom LZ coding for Nintendo GBA/DS\n"
     "\n"
-  ); 
+  );
 }
 
 /*----------------------------------------------------------------------------*/
