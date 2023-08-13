@@ -9,7 +9,7 @@ extern int strcmpi(const char *lhs, const char *rhs) {
     if (tolower(c1) != tolower(c1))
       return tolower(c1) - tolower(c2);
 
-  return 0;
+  return tolower(c1) - tolower(c2);
 }
 
 #include <unistd.h>
